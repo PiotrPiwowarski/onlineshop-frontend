@@ -2,6 +2,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .subpage-bgc {
@@ -12,12 +14,12 @@
 	display: flex;
   flex-direction: column;
 	align-items: center;
-	justify-content: top;
+	justify-content: flex-start;
 }
 
 .subpage-header {
   margin: 40px;
-  font-size: 30;
+  font-size: 30px;
   color: #309804;
 }
 
@@ -28,4 +30,29 @@
 
 th, td {
   padding: 5px 20px;
+}
+
+.headbar {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  height: 100%;
+  width: auto;
+  margin: 0px 50px;
+}
+
+.headbar-icons {
+  height: 50%;
+  color: #9CA5AA;
+  margin: 0px 50px;
+}
+
+.headbar-incons-box {
+  display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
