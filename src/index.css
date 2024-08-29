@@ -1,9 +1,11 @@
+/* ZMIENNE */
 :root {
   --grey-font-color: #9CA5AA;
   --green-font-color: #309804;
   --subpage-bg-color: #F5F5F5;
 }
 
+/* OGÓLNY SELECTOR */
 * {
 	margin: 0;
 	padding: 0;
@@ -12,11 +14,34 @@
   font-optical-sizing: auto;
 }
 
+/* APLIKACJA */
+.application {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.main-app-area {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* SZCZEGÓŁY PRODUKTU */
 .subpage-bg {
 	background-color: var(--subpage-bg-color);
-	height: 100vh;
-	width: 70vw;
-	border-radius: 50px 50px 0px 0px;
+	border-radius: 50px;
+  width: 70vw;
+  padding: 20px;
 	display: flex;
   flex-direction: column;
 	align-items: center;
@@ -24,9 +49,9 @@
 }
 
 .subpage-header {
-  margin: 40px;
   font-size: 2rem;
   color: var(--green-font-color);
+  margin: 20px;
 }
 
 .subpage-content {
@@ -39,46 +64,47 @@ th, td {
   padding: 5px 20px;
 }
 
+/* HEADBAR */
 .headbar {
-  height: 100px;
-  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100vw;
+  margin-bottom: 70px;
 }
 
 .logo-icon {
-  height: 100%;
-  width: auto;
+  height: 100px;
   margin: 0px 50px;
 }
 
 .headbar-icons {
-  height: 50px;
+  height: 30px;
   color: var(--grey-font-color);
-  margin: 0px 50px;
 }
 
-.headbar-incons-box {
-  display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
-
-.search-input {
-  height: 50px;
-  width: 25vw;
-  text-align: center;
-  border: none;
-  color: var(--user-color);
-  background-color: var(--subpage-bg-color);
-  font-size: 1.5rem;
-  border-radius: 25px;
-}
-
+/* ALL THE BUTTONS */
 .button {
-  background-color: #fff;
+  background-color: white;
+  color: var(--grey-font-color);
+  font-weight: bold;
   border: none;
-  transition: opacity 0.4s;
+  margin: 0px 20px;
+  transition: opacity 0.2s;
+  font-size: 1rem;
+}
+
+.sidebar-button {
+  margin: 10px 0px;
+}
+
+.green-button {
+
+}
+
+.red-button {
+
 }
 
 .button:hover {
@@ -87,4 +113,12 @@ th, td {
 
 .button:active {
   opacity: 0.4;
+}
+
+/* SIDEBARS */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }

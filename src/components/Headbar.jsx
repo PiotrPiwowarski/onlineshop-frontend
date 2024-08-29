@@ -1,31 +1,54 @@
 import logoIcon from '../images/logo-icon.jpeg';
 import shoppingCartIcon from '../images/shopping-cart-icon.svg';
 import userIcon from '../images/user-icon.svg';
-import magnifyingGlass from '../images/magnifying-glass.svg';
-import {useState} from 'react';
+import burgerMenuIcon from '../images/burger-menu-icon.svg';
 
-const Headbar = () => {
-    const [inputData, setInputData] = useState('');
+const Headbar = ({setCategoriesBarVisibility, setUserBarVisibility}) => {
 
-    const handleInputChange = (event) => {
-        setInputData(event.target.value);
-    }
+	const handleCategoriesBarVisibility = () => {
+		setCategoriesBarVisibility(prev => !prev);
+	}
 
-    return (
-        <div className='headbar'>
-            <div className='headbar'>
-                <img className='logo-icon' src={logoIcon} alt='logo glutennly' />
-            </div>
-            <div className='headbar headbar-search-input'>
-                <input className='search-input' type='text' placeholder='Szukaj'/>
-                <button className='button' onClick={handleInputChange}><img className='headbar-icons' src={magnifyingGlass} alt='logo lupy' /></button>
-            </div>
-            <div className='headbar headbar-incons-box'>
-                <button className='button'><img className='headbar-icons' src={shoppingCartIcon} alt='logo wózka sklepowego' /></button>
-                <button className='button'><img className='headbar-icons' src={userIcon} alt='logo użytkownika' /></button>
-            </div>
-        </div>
-    );
-}
+	const handleUserBarVisibility = () => {
+		setUserBarVisibility(prev => !prev);
+	}
+
+	return (
+		<div className='headbar'>
+
+			<div>
+				<button className='button pictogram-button' onClick={handleCategoriesBarVisibility}>
+					<img
+						className='headbar-icons'
+						src={burgerMenuIcon}
+						alt='logo menu hamburgerowego'
+					/>
+				</button>
+			</div>
+
+			<div>
+				<img className='logo-icon' src={logoIcon} alt='logo glutennly' />
+			</div>
+
+			<div>
+				<button className='button'>
+					<img
+                        className='headbar-icons'
+						src={shoppingCartIcon}
+						alt='logo wózka sklepowego'
+					/>
+				</button>
+				<button className='button' onClick={handleUserBarVisibility}>
+					<img
+						className='headbar-icons'
+						src={userIcon}
+						alt='logo użytkownika'
+					/>
+				</button>
+			</div>
+
+		</div>
+	);
+};
 
 export default Headbar;
