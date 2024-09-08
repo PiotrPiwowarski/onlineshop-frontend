@@ -1,8 +1,7 @@
-
-const CategoriesBar = () => {
+const CategoriesBar = ({ toggleCategoriesBar }) => {
     return (
-        <div className="sidebar">
-            <button className="button sidebar-button">Wszystkie</button>
+        <div className={`sidebar ${toggleCategoriesBar === true ? 'visible' : 'hidden'}`}>
+            <button className='button sidebar-button'>Wszystkie</button>
         </div>
     );
 }

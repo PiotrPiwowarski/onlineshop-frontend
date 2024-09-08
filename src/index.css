@@ -3,6 +3,8 @@
   --grey-font-color: #9CA5AA;
   --green-font-color: #309804;
   --subpage-bg-color: #F5F5F5;
+  --green-button-color: #A8E063;
+  --main-section-header-gradient: linear-gradient(180deg, #56AB2F, #A8E063);
 }
 
 /* OGÓLNY SELECTOR */
@@ -19,21 +21,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .main-app-area {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .visible {
-  display: block;
+  opacity: 1;
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+}
+
+.text-color {
+  color: var(--grey-font-color);
+  font-weight: bold;
+}
+
+/* LISTA PRODUKTÓW */
+.main-section-header {
+  height: 150px;
+  width: 90%;
+  background: var(--main-section-header-gradient);
+  border-radius: 30px;
+}
+
+.main-section-header-title {
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  line-height: 150px;
+}
+
+/* SKRÓCONE INFO O PRODUKCIE */
+.product {
+  background-color: white;
+  width: 50vw;
+  margin: 20px 0px;
+  border-radius: 15px;
+}
+
+.product-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
 }
 
 /* SZCZEGÓŁY PRODUKTU */
@@ -68,7 +106,7 @@ th, td {
 .headbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100px;
   width: 100vw;
   margin-bottom: 70px;
@@ -79,28 +117,38 @@ th, td {
   margin: 0px 50px;
 }
 
+.headbar-right-icons {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .headbar-icons {
   height: 30px;
   color: var(--grey-font-color);
 }
 
-/* ALL THE BUTTONS */
+/* BUTTONY */
 .button {
-  background-color: white;
-  color: var(--grey-font-color);
   font-weight: bold;
   border: none;
   margin: 0px 20px;
   transition: opacity 0.2s;
   font-size: 1rem;
-}
-
-.sidebar-button {
   margin: 10px 0px;
 }
 
-.green-button {
+.sidebar-button {
+  background-color: white;
+  color: var(--grey-font-color);
+}
 
+.green-button {
+  background-color: var(--green-button-color);
+  color: white;
+  padding: 10px 10px;
+  border-radius: 10px;
 }
 
 .red-button {
@@ -120,5 +168,8 @@ th, td {
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 100%;
 }

@@ -3,21 +3,21 @@ import shoppingCartIcon from '../images/shopping-cart-icon.svg';
 import userIcon from '../images/user-icon.svg';
 import burgerMenuIcon from '../images/burger-menu-icon.svg';
 
-const Headbar = ({setCategoriesBarVisibility, setUserBarVisibility}) => {
+const Headbar = ({setToggleCategoriesBar, setToggleUserBar}) => {
 
-	const handleCategoriesBarVisibility = () => {
-		setCategoriesBarVisibility(prev => !prev);
+	const handleToggleCategoriesBar = () => {
+		setToggleCategoriesBar(prev => !prev);
 	}
 
-	const handleUserBarVisibility = () => {
-		setUserBarVisibility(prev => !prev);
+	const handleToggleUserBar = () => {
+		setToggleUserBar(prev => !prev);
 	}
 
 	return (
 		<div className='headbar'>
 
 			<div>
-				<button className='button pictogram-button' onClick={handleCategoriesBarVisibility}>
+				<button className='button sidebar-button pictogram-button' onClick={handleToggleCategoriesBar}>
 					<img
 						className='headbar-icons'
 						src={burgerMenuIcon}
@@ -30,15 +30,15 @@ const Headbar = ({setCategoriesBarVisibility, setUserBarVisibility}) => {
 				<img className='logo-icon' src={logoIcon} alt='logo glutennly' />
 			</div>
 
-			<div>
-				<button className='button'>
+			<div className='headbar-right-icons'>
+				<button className='button sidebar-button'>
 					<img
                         className='headbar-icons'
 						src={shoppingCartIcon}
 						alt='logo wózka sklepowego'
 					/>
 				</button>
-				<button className='button' onClick={handleUserBarVisibility}>
+				<button className='button sidebar-button' onClick={handleToggleUserBar}>
 					<img
 						className='headbar-icons'
 						src={userIcon}

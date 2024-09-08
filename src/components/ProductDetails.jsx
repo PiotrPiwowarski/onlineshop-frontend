@@ -1,13 +1,13 @@
 import { getProductById } from '../services/Product';
 import { useState, useEffect } from 'react';
 
-const ProductDetails = () => {
+const ProductDetails = ({productId}) => {
 	const [product, setProduct] = useState(null);
 	useEffect(() => {
-		getProductById(1)
+		getProductById(productId)
 			.then((response) => setProduct(response.data))
 			.catch((error) => console.log(error));
-	}, []);
+	}, [productId]);
 	return (
 		<div className='subpage-bg'>
 			<h1 className='subpage-header'>Szczegóły produktu</h1>
@@ -41,6 +41,7 @@ const ProductDetails = () => {
 					<p>Ładowanie...</p>
 				)}
 			</div>
+			<button className='button green-button'>Do koszyka</button>
 		</div>
 	);
 };
