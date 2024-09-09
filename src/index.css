@@ -16,6 +16,26 @@
   font-optical-sizing: auto;
 }
 
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100vw;
+  margin-bottom: 70px;
+}
+
+.logo-icon {
+  height: 100px;
+}
+
+.rest-icons {
+  height: 30px;
+  color: var(--grey-font-color);
+  margin: 0px 30px;
+}
+
 /* APLIKACJA */
 .application {
   display: flex;
@@ -29,14 +49,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-}
-
-.visible {
-  opacity: 1;
-}
-
-.hidden {
-  opacity: 0;
 }
 
 .text-color {
@@ -102,35 +114,9 @@ th, td {
   padding: 5px 20px;
 }
 
-/* HEADBAR */
-.headbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 100px;
-  width: 100vw;
-  margin-bottom: 70px;
-}
-
-.logo-icon {
-  height: 100px;
-  margin: 0px 50px;
-}
-
-.headbar-right-icons {
-  width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.headbar-icons {
-  height: 30px;
-  color: var(--grey-font-color);
-}
-
 /* BUTTONY */
 .button {
+  background-color: rgba(255, 255, 255, 0);
   font-weight: bold;
   border: none;
   margin: 0px 20px;
@@ -140,7 +126,6 @@ th, td {
 }
 
 .sidebar-button {
-  background-color: white;
   color: var(--grey-font-color);
 }
 
@@ -163,9 +148,9 @@ th, td {
   opacity: 0.4;
 }
 
-/* SIDEBARS */
+/* CATEGORIES */
 
-.sidebar {
+.categories {
   display: flex;
   flex-direction: column;
   justify-content: center;

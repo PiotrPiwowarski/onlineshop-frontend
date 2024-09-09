@@ -1,8 +1,11 @@
 import { getProductById } from '../services/Product';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ProductDetails = ({productId}) => {
+const ProductDetails = () => {
 	const [product, setProduct] = useState(null);
+	const location = useLocation();
+	const {productId} = location.state;
 	useEffect(() => {
 		getProductById(productId)
 			.then((response) => setProduct(response.data))
@@ -24,8 +27,8 @@ const ProductDetails = ({productId}) => {
 								<td>{product.id}</td>
 							</tr>
 							<tr>
-								<th>Typ produktu</th>
-								<td>{product.productType}</td>
+								<th>Kategoria produktu</th>
+								<td>{product.category}</td>
 							</tr>
 							<tr>
 								<th>Cena</th>
