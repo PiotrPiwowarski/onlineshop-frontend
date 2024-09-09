@@ -1,5 +1,5 @@
 import AllProducts from './components/AllProducts';
-import Categories from './components/Categories';
+import Menu from './components/Menu';
 import Header from './components/Header';
 import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
@@ -7,14 +7,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 
 const App = () => {
+	const [toggleMenu, setToggleMenu] = useState(false);
 	const [toggleCategories, setToggleCategories] = useState(false);
 	return (
 		<Router className='application'>
 			<header>
-				<Header setToggleCategories={setToggleCategories} />
+				<Header setToggleMenu={setToggleMenu} setToggleCategories={setToggleCategories} />
 			</header>
 			<main className='main-app-area'>
-				<Categories toggleCategories={toggleCategories} />
+				<Menu toggleMenu={toggleMenu} toggleCategories={toggleCategories} setToggleCategories={setToggleCategories} />
 				<Routes>
 					<Route path='/' element={<AllProducts />} />
 					<Route path='/productDetails' element={<ProductDetails />} />

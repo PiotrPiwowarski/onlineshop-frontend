@@ -23,7 +23,6 @@
   justify-content: space-between;
   height: 100px;
   width: 100vw;
-  margin-bottom: 70px;
 }
 
 .logo-icon {
@@ -36,19 +35,28 @@
   margin: 0px 30px;
 }
 
+/* FOOTER */
+.footer {
+  height: 100px;
+  width: 100vw;
+  line-height: 100px;
+  text-align: center;
+  color: var(--grey-font-color);
+}
+
 /* APLIKACJA */
 .application {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
 }
 
 .main-app-area {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  margin: 30px 0px;
 }
 
 .text-color {
@@ -127,6 +135,7 @@ th, td {
 
 .sidebar-button {
   color: var(--grey-font-color);
+  width: 100%;
 }
 
 .green-button {
@@ -134,10 +143,6 @@ th, td {
   color: white;
   padding: 10px 10px;
   border-radius: 10px;
-}
-
-.red-button {
-
 }
 
 .button:hover {
@@ -148,13 +153,17 @@ th, td {
   opacity: 0.4;
 }
 
-/* CATEGORIES */
-
-.categories {
+/* MENU */
+.menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 10%;
   height: 100%;
+}
+
+.categories {
+  border-top: 3px solid var(--grey-font-color);
+  border-bottom: 3px solid var(--grey-font-color);
 }

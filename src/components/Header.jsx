@@ -3,10 +3,15 @@ import logoIcon from '../images/logo-icon.svg';
 import burgerMenuIcon from '../images/burger-menu-icon.svg';
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({ setToggleCategories}) => {
+const Header = ({ setToggleMenu, setToggleCategories}) => {
 	const navigate = useNavigate();
 	const handleToggleCategories = () => {
-		setToggleCategories((prev) => !prev);
+		setToggleMenu((prev) => {
+			if(prev === true) {
+				setToggleCategories(false);
+			}
+			return !prev
+		});
 	};
 
 	const handleClickLogo = () => {

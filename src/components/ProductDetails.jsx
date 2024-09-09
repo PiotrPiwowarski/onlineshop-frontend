@@ -19,23 +19,23 @@ const ProductDetails = () => {
 					<table>
 						<tbody>
 							<tr>
-								<th>Nazwa</th>
+								<th>Nazwa:</th>
 								<td>{product.name}</td>
 							</tr>
 							<tr>
-								<th>Id</th>
+								<th>Id:</th>
 								<td>{product.id}</td>
 							</tr>
 							<tr>
-								<th>Kategoria produktu</th>
-								<td>{product.category}</td>
+								<th>Kategoria produktu:</th>
+								<td>{product.category === 'BREAD' ? 'Chleb' : product.category === 'DRINK' ? 'Napój' : product.category === 'SWEET' ? 'Słodycze' : 'Inne'}</td>
 							</tr>
 							<tr>
-								<th>Cena</th>
-								<td>{product.price}</td>
+								<th>Cena:</th>
+								<td>{product.price} zł</td>
 							</tr>
 							<tr>
-								<th>Opis</th>
+								<th>Opis:</th>
 								<td>{product.description}</td>
 							</tr>
 						</tbody>
