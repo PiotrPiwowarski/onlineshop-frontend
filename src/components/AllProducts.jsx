@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { getAllProducts } from '../services/Product';
 import Product from './Product';
 
-const AllProducts = () => {
+const AllProducts = ({setShoppingCart}) => {
 	const [productsList, setProductsList] = useState(null);
 	useEffect(() => {
 		getAllProducts()
-			.then((response) => setProductsList(response.data))
-			.catch((error) => console.log(error));
+			.then(response => setProductsList(response.data))
+			.catch(error => console.log(error));
 	}, []);
 	return (
 		<div className='subpage-bg'>

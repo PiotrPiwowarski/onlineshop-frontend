@@ -2,7 +2,7 @@ import { getProductById } from '../services/Product';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const ProductDetails = () => {
+const ProductDetails = ({setShoppingCart}) => {
 	const [product, setProduct] = useState(null);
 	const location = useLocation();
 	const {productId} = location.state;

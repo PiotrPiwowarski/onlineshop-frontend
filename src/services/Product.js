@@ -7,5 +7,9 @@ export const getProductById = (id) => {
 }
 
 export const getAllProducts = () => {
-    return axios.get(`${URL}/all`)
+    return axios.get(`${URL}/all`);
+}
+
+export const getProductByCategory = (category) => {
+    return axios.get(`${URL}?category=${category}`);
 }

@@ -1,4 +1,4 @@
-const Footer = () => {
+const FooterComponent = () => {
     return (
         <div className="footer">
             <p>Copyright &copy; Glutennly - Zdrowo i bezglutenowo</p>
@@ -6,4 +6,4 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+export default FooterComponent;
