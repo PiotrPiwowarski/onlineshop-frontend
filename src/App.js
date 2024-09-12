@@ -4,13 +4,24 @@ import HeaderComponent from './components/HeaderComponent';
 import ProductDetails from './components/ProductDetails';
 import FooterComponent from './components/FooterComponent';
 import ProductsOfCategory from './components/ProductsOfCategory';
+import ShoppingCart from './components/ShoppingCart';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const App = () => {
+	const getInitialCartItems = () => {
+		const savedCart = localStorage.getItem('cartItems');
+		return savedCart ? JSON.parse(savedCart) : [];
+	};
+
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const [toggleCategories, setToggleCategories] = useState(false);
-	const [shoppingCart, setShoppingCart] = useState(null);
+	const [cartItems, setCartItems] = useState(getInitialCartItems);
+
+	useEffect(() => {
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
+	  }, [cartItems]);
+
 	return (
 		<Router>
 			<div className='application'>
@@ -27,9 +38,19 @@ const App = () => {
 						setToggleCategories={setToggleCategories}
 					/>
 					<Routes>
-						<Route path='/' element={<AllProducts setShoppingCart={setShoppingCart} />} />
-						<Route path='/productDetails' element={<ProductDetails setShoppingCart={setShoppingCart} />} />
-						<Route path='/productsOfCategory' element={<ProductsOfCategory setShoppingCart={setShoppingCart} />} />
+						<Route
+							path='/'
+							element={<AllProducts setCartItems={setCartItems} />}
+						/>
+						<Route path='/productDetails' element={<ProductDetails />} />
+						<Route
+							path='/productsOfCategory'
+							element={<ProductsOfCategory />}
+						/>
+						<Route
+							path='/shoppingCart'
+							element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />}
+						/>
 					</Routes>
 				</main>
 				<footer className='footer'>

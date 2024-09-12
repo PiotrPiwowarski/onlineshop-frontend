@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getAllProducts } from '../services/Product';
 import Product from './Product';
 
-const AllProducts = ({setShoppingCart}) => {
+const AllProducts = ({setCartItems}) => {
 	const [productsList, setProductsList] = useState(null);
 	useEffect(() => {
 		getAllProducts()
@@ -16,8 +16,8 @@ const AllProducts = ({setShoppingCart}) => {
 			</div>
 			<div className='all-products'>
 				{productsList !== null ? productsList.map((product) => {
-					return <Product key={product.id} product={product} />;
-				}) : <p>Ładowanie...</p>}
+					return <Product key={product.id} product={product} setCartItems={setCartItems} />;
+				}) : <p className='text-color loading'>Proszę czekać...</p>}
 			</div>
 		</div>
 	);

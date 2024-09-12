@@ -3,7 +3,7 @@ import Product from './Product';
 import { getProductByCategory } from '../services/Product';
 import { useLocation } from 'react-router-dom';
 
-const ProductsOfCategory = ({setShoppingCart}) => {
+const ProductsOfCategory = () => {
 	const [productsList, setProductsList] = useState(null);
 	const location = useLocation();
 	const { category } = location.state;
@@ -16,16 +16,27 @@ const ProductsOfCategory = ({setShoppingCart}) => {
 		<div className='subpage-bg'>
 			<div className='main-section-header'>
 				<h1 className='main-section-header-title'>
-					{category === 'bread' ? 'Chleby' : category === 'drink' ? 'Napoje' : category === 'sweet' ? 'Słodycze' : 'Inne'}
+					{category === 'bread'
+						? 'Chleby'
+						: category === 'drink'
+						? 'Napoje'
+						: category === 'sweet'
+						? 'Słodycze'
+						: 'Inne'}
 				</h1>
 			</div>
 			<div className='all-products'>
 				{productsList !== null ? (
 					productsList.map((product) => {
-						return <Product key={product.id} product={product} />;
+						return (
+							<Product
+								key={product.id}
+								product={product}
+							/>
+						);
 					})
 				) : (
-					<p>Ładowanie...</p>
+					<p className='text-color loading'>Proszę czekać...</p>
 				)}
 			</div>
 		</div>

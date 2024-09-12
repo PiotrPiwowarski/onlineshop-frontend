@@ -2,7 +2,7 @@ import { getProductById } from '../services/Product';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const ProductDetails = ({setShoppingCart}) => {
+const ProductDetails = () => {
 	const [product, setProduct] = useState(null);
 	const location = useLocation();
 	const {productId} = location.state;
@@ -41,7 +41,7 @@ const ProductDetails = ({setShoppingCart}) => {
 						</tbody>
 					</table>
 				) : (
-					<p>Ładowanie...</p>
+					<p className='text-color loading'>Ładowanie...</p>
 				)}
 			</div>
 			<button className='button green-button'>Do koszyka</button>

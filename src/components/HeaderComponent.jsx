@@ -3,19 +3,26 @@ import logoIcon from '../images/logo-icon.svg';
 import burgerMenuIcon from '../images/burger-menu-icon.svg';
 import { useNavigate } from 'react-router-dom';
 
-const HeaderComponent = ({ setToggleMenu, setToggleCategories}) => {
+const HeaderComponent = ({
+	setToggleMenu,
+	setToggleCategories
+}) => {
 	const navigate = useNavigate();
 	const handleToggleCategories = () => {
 		setToggleMenu((prev) => {
-			if(prev === true) {
+			if (prev === true) {
 				setToggleCategories(false);
 			}
-			return !prev
+			return !prev;
 		});
 	};
 
 	const handleClickLogo = () => {
 		navigate('/');
+	};
+
+	const handleClickShoppingCart = () => {
+		navigate('/shoppingCart');
 	};
 
 	return (
@@ -39,7 +46,9 @@ const HeaderComponent = ({ setToggleMenu, setToggleCategories}) => {
 			</div>
 
 			<div className='headbar-right-icons'>
-				<button className='button sidebar-button'>
+				<button
+					className='button sidebar-button'
+					onClick={handleClickShoppingCart}>
 					<img
 						className='rest-icons'
 						src={shoppingCartIcon}
